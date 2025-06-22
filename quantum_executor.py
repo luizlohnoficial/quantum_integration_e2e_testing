@@ -13,6 +13,7 @@ def execute_circuit(circuit, config: Dict[str, Any]):
     backend = config.get("backend", "simulator")
     shots = config.get("shots", 1024)
     logging.debug("Executing on backend %s with %d shots", backend, shots)
+    logging.debug("Circuit: %s", circuit)
 
     if backend == "simulator":
         try:
@@ -24,6 +25,8 @@ def execute_circuit(circuit, config: Dict[str, Any]):
         job = execute(circuit, backend=sim, shots=shots)
         result = job.result()
         counts = result.get_counts()
+        logging.debug("Execution counts: %s", counts)
+        logging.debug("Execution finished")
         return counts
     else:
         logging.warning("Backend %s not implemented, returning empty result", backend)
