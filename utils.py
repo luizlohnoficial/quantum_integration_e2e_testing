@@ -81,6 +81,12 @@ def setup_logging(log_file: str = "logs/pipeline.log") -> None:
     )
 
 
+def log_section(title: str) -> None:
+    """Output a formatted section header for logs."""
+    border = "=" * 10
+    logging.info("%s %s %s", border, title, border)
+
+
 def load_config(path: str = "config.yaml") -> Dict[str, Any]:
     """Load YAML configuration file."""
     with open(path, "r", encoding="utf-8") as file:
