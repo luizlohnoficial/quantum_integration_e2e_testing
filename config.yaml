@@ -1,0 +1,21 @@
+backend: 'simulator'
+seed: 42
+shots: 1024
+assets:
+  - name: 'AAPL'
+    expected_return: 0.08
+    std_dev: 0.15
+  - name: 'MSFT'
+    expected_return: 0.06
+    std_dev: 0.1
+  - name: 'GOOGL'
+    expected_return: 0.07
+    std_dev: 0.12
+  - name: 'AMZN'
+    expected_return: 0.09
+    std_dev: 0.2
+covariance_matrix:
+  - [0.0225, 0.018, 0.015, 0.012]
+  - [0.018, 0.01, 0.008, 0.007]
+  - [0.015, 0.008, 0.0144, 0.009]
+  - [0.012, 0.007, 0.009, 0.04]
